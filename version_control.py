@@ -1,5 +1,7 @@
 def main():  # Tyler Cutajar
     menu = True
+    password = ""
+    
     while menu:
         print(f"\nMenu\n"
               "-------------")
@@ -10,7 +12,8 @@ def main():  # Tyler Cutajar
         option = input("\nPlease enter an option: ")
 
         if option == "1":
-            password = input("Please enter your password to encode: ")
+            while len(password) != 8:
+                password = input("Please enter your password to encode: ")
             en_password = encode(password)
             print("Your password has been encoded and stored!")
         elif option == "2":
